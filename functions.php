@@ -9,6 +9,13 @@
 
 /* TODO: Change wptbp_ prefixes */
 
+/**
+ * Returns the page title based on page properties.
+ *
+ * @return string
+ *
+ * @since 1.00
+ */
 function wptbp_get_title() {
 	$title = '';
 

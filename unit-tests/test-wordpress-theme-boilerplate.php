@@ -63,9 +63,16 @@ class Test_WordPress_Theme_Boilerplate extends WP_UnitTestCase {
 		$this->assertTrue( wp_script_is( 'jquery' ), 'Test that jQuery is loaded.' ); // Test that jQuery is now loaded
 	}
 
+	/**
+	 * Tests the output of the title function to make sure it contains the site's name.
+	 *
+	 * @since 1.00
+	 */
 	function test_wptbp_get_title() {
+		// TODO: Change function prefix
 		$site_name = get_bloginfo( 'name' );
 
+		// TODO: Change funciton prefix
 		$this->assertContains( $site_name, wptbp_get_title(), 'wptbp_get_title() echoes the title for the page.' );
 	}
 }
