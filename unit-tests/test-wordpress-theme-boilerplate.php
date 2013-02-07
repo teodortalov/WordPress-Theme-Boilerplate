@@ -58,9 +58,15 @@ class Test_WordPress_Theme_Boilerplate extends WP_UnitTestCase {
 	function test_jquery_is_loaded() {
 		$this->assertFalse( wp_script_is( 'jquery' ), 'Test that jQuery is not loaded.' ); // Make sure jQuery is not loaded yet
 
-		do_action( 'wp_enqueue_script' ); // Run this action to load jQuery
+		wp_enqueue_script( 'jquery' ); // Run this action to load jQuery using the same code used to load it in the theme
 
 		$this->assertTrue( wp_script_is( 'jquery' ), 'Test that jQuery is loaded.' ); // Test that jQuery is now loaded
+	}
+
+	function test_wptbp_get_title() {
+		$site_name = get_bloginfo( 'name' );
+
+		$this->assertContains( $site_name, wptbp_get_title(), 'wptbp_get_title() echoes the title for the page.' );
 	}
 }
 
