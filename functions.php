@@ -10,32 +10,34 @@
 /* TODO: Change wptbp_ prefixes */
 
 function wptbp_get_title() {
+	$title = '';
+
+	// Add any special prefix for sections
 	if ( function_exists( 'is_tag' ) && is_tag() ) {
-		single_tag_title( 'Tag Archive for &quot; ' );
-		echo '&quot; - ';
+		$title .= single_tag_title( 'Tag Archive for &quot; ', false ) . '&quot; - ';
 	} elseif ( is_archive() ) {
-		wp_title( '' );
-		echo ' Archive - ';
+		$title .= wp_title( '' ) . ' Archive - ';
 	} elseif ( is_search() ) {
-		echo 'Search for &quot; ' . esc_html( $s ) . '&quot; - ';
+		$title .= 'Search for &quot; ' . esc_html( $s ) . '&quot; - ';
 	} elseif ( !( is_404() ) && ( is_single() ) || ( is_page() ) ) {
-		wp_title( '' );
-		echo ' - ';
+		$title .= wp_title( '' ) . ' - ';
 	} elseif ( is_404() ) {
-		echo 'Not Found - ';
+		$title .= 'Not Found - ';
 	}
 
+	// Main title
 	if ( is_home() ) {
-		bloginfo( 'name' );
-		echo ' - ';
-		bloginfo( 'description' );
+		$title .= get_bloginfo( 'name' ) . ' - ' . get_bloginfo( 'description' );
 	} else {
-		bloginfo( 'name' );
+		$title .= get_bloginfo( 'name' );
 	}
 
+	// Add page indicator to title
 	if ( $paged > 1 ) {
-		echo ' - page ' . $paged;
+		$title .= ' - page ' . $paged;
 	}
+
+	return $title;
 }
 
 ?>
