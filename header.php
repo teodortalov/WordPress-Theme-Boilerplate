@@ -8,3 +8,22 @@
 
 ?>
 
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" <?php language_attributes(); ?>>
+<head>
+	<meta charset="<?php bloginfo( 'charset' ); ?>"/>
+
+	<title><?php echo wptbp_get_title(); ?></title>
+
+	<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>" type="text/css" media="screen"/>
+
+	<?php wp_enqueue_script( 'jquery' ); ?>
+
+	<?php wp_head(); ?>
+</head>
+
+<body <?php body_class(); ?>>
+
+<header>
+
+</header>

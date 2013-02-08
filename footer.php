@@ -5,4 +5,12 @@
  *
  * @since 1.00
  */
+
 ?>
+
+<footer>
+
+</footer>
+
+</body>
+</html>
