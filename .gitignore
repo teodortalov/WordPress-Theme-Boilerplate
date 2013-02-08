@@ -13,3 +13,9 @@ Thumbs.db
 
 # Folder config file
 Desktop.ini
+
+###############
+## Unit Tests
+###############
+
+unit-tests/
