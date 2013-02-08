@@ -18,7 +18,7 @@ include_once( '../functions.php' );
  */
 class Test_WordPress_Theme_Boilerplate extends WP_UnitTestCase {
 	// TODO: Change WordPress_Theme_Boilerplate to theme name
-	// TODO: Chnage file name to match
+	// TODO: Change file name to match
 
 	/**
 	 * Setup the theme for testing.
