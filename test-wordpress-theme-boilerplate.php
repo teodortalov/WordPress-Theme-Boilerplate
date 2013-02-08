@@ -16,6 +16,7 @@ include_once( '../functions.php' );
  */
 class Test_WordPress_Theme_Boilerplate extends WP_UnitTestCase {
 	// TODO: Change WordPress_Theme_Boilerplate to theme name
+	// TODO: Chnage file name to match
 
 	/**
 	 * Setup the theme for testing.
@@ -47,6 +48,7 @@ class Test_WordPress_Theme_Boilerplate extends WP_UnitTestCase {
 	 * @since 1.00
 	 */
 	function test_inactive_theme() {
+		// TODO: Set "Twenty Twelve" to whatever your default theme is
 		$this->assertFalse( 'Twenty Twelve' == wp_get_theme() );
 	}
 
@@ -72,7 +74,7 @@ class Test_WordPress_Theme_Boilerplate extends WP_UnitTestCase {
 		// TODO: Change function prefix
 		$site_name = get_bloginfo( 'name' );
 
-		// TODO: Change funciton prefix
+		// TODO: Change function prefix
 		$this->assertContains( $site_name, wptbp_get_title(), 'wptbp_get_title() echoes the title for the page.' );
 	}
 }
