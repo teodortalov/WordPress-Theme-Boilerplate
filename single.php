@@ -3,6 +3,8 @@
 /**
  * Displays a single Post in full (the Posts permalink), typically with comments.
  *
+ * @package WordPress
+ * @subpackage WordPress_Theme_Boilerplate
  * @since 1.00
  *
  */
