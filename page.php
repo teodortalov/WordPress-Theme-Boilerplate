@@ -26,12 +26,6 @@
 		</p>
 
 		<?php the_content( 'Read Full Article' ); ?>
-
-		<p>
-			<?php the_tags( 'Tags: ', ', ', '<br />' ); ?>
-			Posted in <?php the_category( ', ' ); ?>
-			<?php comments_popup_link( 'No Comments', '1 Comment', '% Comments' ); ?>
-		</p>
 	</div>
 
 	<?php endwhile; ?>
