@@ -42,7 +42,7 @@ function wptbp_get_title() {
 	}
 
 	// Add page indicator to title
-	$paged = (get_query_var('paged')) ? get_query_var('paged') : 1; // Set the $paged variable
+	$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1; // Set the $paged variable
 
 	if ( $paged > 1 ) {
 		$title .= ' - page ' . $paged;
