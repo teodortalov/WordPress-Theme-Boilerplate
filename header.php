@@ -17,11 +17,11 @@
 
 	<title><?php echo wptbp_get_title(); ?></title>
 
-	<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>" type="text/css" media="screen"/>
-
 	<?php wp_enqueue_script( 'jquery' ); ?>
 
 	<?php wp_head(); ?>
+
+	<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>" type="text/css" media="screen"/>
 </head>
 
 <body <?php body_class(); ?>>
