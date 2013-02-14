@@ -3,10 +3,9 @@
 <?php
 
 /**
- * Displays organized list of all site content.
+ * Page template that displays an organized list of all site content.
  *
  * @since 1.00
- *
  */
 
 ?>
