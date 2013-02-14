@@ -12,6 +12,12 @@ Tags: TODO
 /* TODO: Change theme version as the version used now is for the boilerplate */
 /* TODO: Create real screenshot */
 
+/* Reset browser styles */
+* {
+	margin: 0;
+	padding: 0;
+}
+
 .menu-primary-container li {
 	display: inline-block;
 }
