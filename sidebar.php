@@ -13,6 +13,6 @@
 
 <div id="sidebar">
 
-	<?php // TODO: Add sidebars ?>
+	<?php dynamic_sidebar( 'Sidebar Widgets' ); ?>
 
 </div>

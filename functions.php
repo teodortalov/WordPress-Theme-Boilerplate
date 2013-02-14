@@ -53,4 +53,27 @@ function wptbp_get_title() {
 
 register_nav_menu( 'primary', 'Primary Navigation' ); // Register primary navigation menu location
 
+
+// Register sidebar
+if ( function_exists( 'register_sidebar' ) ) {
+	register_sidebar( array(
+		'name' => 'Sidebar Widgets',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="widget-title">',
+		'after_title' => '</h4>'
+	) );
+}
+
+// Register secondary sidebar
+if ( function_exists( 'register_sidebar' ) ) {
+	register_sidebar( array(
+		'name' => 'Secondary Sidebar Widgets',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="widget-title">',
+		'after_title' => '</h4>'
+	) );
+}
+
 ?>
