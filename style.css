@@ -11,3 +11,22 @@ Tags: TODO
 /* TODO: Rename theme */
 /* TODO: Change theme version as the version used now is for the boilerplate */
 /* TODO: Create real screenshot */
+
+#sidebar {
+	width: 200px;
+	float: left;
+}
+
+#main-content {
+	width: 500px;
+	float: left;
+}
+
+#sidebar-secondary {
+	width: 200px;
+	float: right;
+}
+
+footer {
+	clear: both;
+}
