@@ -26,6 +26,6 @@
 
 <header>
 	<div id="primary-navigation">
-		<?php wp_nav_menu( 'primary' ); ?>
+		<?php wp_nav_menu( 'primary' ); // Place primary navigation menu location ?>
 	</div>
 </header>
