@@ -1,7 +1,7 @@
 <?php
 
 /**
- * The main sidebar the theme uses.
+ * The secondary sidebar the theme uses.
  *
  * @package WordPress
  * @subpackage WordPress_Theme_Boilerplate
@@ -11,6 +11,6 @@
 
 ?>
 
-<div id="sidebar">
+<div id="sidebar-secondary">
 
 </div>
