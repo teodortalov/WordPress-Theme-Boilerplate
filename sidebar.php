@@ -13,4 +13,6 @@
 
 <div id="sidebar">
 
+	<?php // TODO: Add sidebars ?>
+
 </div>
