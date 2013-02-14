@@ -25,5 +25,7 @@
 <body <?php body_class(); ?>>
 
 <header>
-
+	<div id="primary-navigation">
+		<?php wp_nav_menu( 'primary' ); ?>
+	</div>
 </header>

@@ -51,4 +51,6 @@ function wptbp_get_title() {
 	return $title;
 }
 
+register_nav_menu( 'primary', 'Primary Navigation' );
+
 ?>
