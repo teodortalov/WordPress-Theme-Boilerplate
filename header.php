@@ -15,7 +15,7 @@
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>"/>
 
-	<title><?php echo wptbp_get_title(); ?></title>
+	<title><?php echo wptbp_get_title(); // TODO: Change function prefix ?></title>
 
 	<?php wp_head(); ?>
 
