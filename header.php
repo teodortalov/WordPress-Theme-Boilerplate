@@ -19,7 +19,8 @@
 
 	<?php wp_head(); ?>
 
-	<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>" type="text/css" media="screen"/>
+	<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_directory' ); ?>/css/reset.css" type="text/css" media="screen, projection" />
+	<link rel="stylesheet" href="<?php bloginfo( 'stylesheet_url' ); ?>" type="text/css" media="screen, projection" />
 </head>
 
 <body <?php body_class(); ?>>
