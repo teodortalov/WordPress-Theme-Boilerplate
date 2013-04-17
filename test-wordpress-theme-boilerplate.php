@@ -80,5 +80,3 @@ class Test_WordPress_Theme_Boilerplate extends WP_UnitTestCase {
 		$this->assertContains( $site_name, wptbp_get_title(), 'wptbp_get_title() echoes the title for the page.' );
 	}
 }
-
-?>

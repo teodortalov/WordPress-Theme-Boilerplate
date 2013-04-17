@@ -3,6 +3,8 @@
 /**
  * Displays posts in on particular day, month, year, category, tag, or author.
  *
+ * @package WordPress
+ * @subpackage WordPress_Theme_Boilerplate
  * @since 1.00
  *
  */
