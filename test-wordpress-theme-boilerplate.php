@@ -3,9 +3,9 @@
 /**
  * Unit tests for the theme.
  *
- * @package WordPress
- * @subpackage WordPress_Theme_Boilerplate
- * @since 1.00
+ * @package WordPressThemeBoilerplate
+ * @author Christopher Lamm <chris@theantichris.com>
+ * @since 1.0.0
  */
 
 // Include themes function file
@@ -14,7 +14,9 @@ include_once( '../functions.php' );
 /**
  * Class that contains the unit tests for the theme.
  *
- * @since 1.00
+ * @package WordPressThemeBoilderPlate
+ * @author Christopher Lamm <chris@theantichris.com>
+ * @since 1.0.0
  */
 class Test_WordPress_Theme_Boilerplate extends WP_UnitTestCase {
 	// TODO: Change WordPress_Theme_Boilerplate to theme name
@@ -25,7 +27,9 @@ class Test_WordPress_Theme_Boilerplate extends WP_UnitTestCase {
 	 *
 	 * Switches the theme to this theme for testing.
 	 *
-	 * @since 1.00
+	 * @since 1.0.0
+	 *
+	 * @return void
 	 */
 	function setUp() {
 		parent::setUp();
@@ -37,7 +41,9 @@ class Test_WordPress_Theme_Boilerplate extends WP_UnitTestCase {
 	/**
 	 * Test that the theme is active
 	 *
-	 * @since 1.00
+	 * @since 1.0.0
+	 *
+	 * @return void
 	 */
 	function test_active_theme() {
 		$this->assertTrue( 'WordPress Theme Boilerplate' == wp_get_theme() ); // TODO: Change to theme name
@@ -47,7 +53,9 @@ class Test_WordPress_Theme_Boilerplate extends WP_UnitTestCase {
 	/**
 	 * Tests that the default theme is inactive.
 	 *
-	 * @since 1.00
+	 * @since 1.0.0
+	 *
+	 * @return void
 	 */
 	function test_inactive_theme() {
 		// TODO: Set "Twenty Twelve" to whatever your default theme is
@@ -57,7 +65,9 @@ class Test_WordPress_Theme_Boilerplate extends WP_UnitTestCase {
 	/**
 	 * Test that checks if jQuery is loaded.
 	 *
-	 * @since 1.00
+	 * @since 1.0.0
+	 *
+	 * @return void
 	 */
 	function test_jquery_is_loaded() {
 		$this->assertFalse( wp_script_is( 'jquery' ), 'Test that jQuery is not loaded.' ); // Make sure jQuery is not loaded yet
@@ -70,7 +80,9 @@ class Test_WordPress_Theme_Boilerplate extends WP_UnitTestCase {
 	/**
 	 * Tests the output of the title function to make sure it contains the site's name.
 	 *
-	 * @since 1.00
+	 * @since 1.0.0
+	 *
+	 * @return void
 	 */
 	function test_wptbp_get_title() {
 		// TODO: Change function prefix

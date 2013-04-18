@@ -3,10 +3,9 @@
 /**
  * The secondary sidebar the theme uses.
  *
- * @package WordPress
- * @subpackage WordPress_Theme_Boilerplate
- * @since 1.00
- *
+ * @package WordPressThemeBoilerplate
+ * @author Christopher Lamm <chris@theantichris.com>
+ * @since 1.0.0
  */
 
 ?>

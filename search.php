@@ -3,7 +3,7 @@
 /**
  * Search results template.
  *
- * @package WordPress
- * @subpackage WordPress_Theme_Boilerplate
+ * @package WordPressThemeBoilerplate
+ * @author Christopher Lamm <chris@theantichris.com>
  * @since 1.00
  */

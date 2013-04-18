@@ -5,11 +5,10 @@
 /**
  * Page template that displays an organized list of all site content.
  *
- * @package WordPress
- * @subpackage WordPress_Theme_Boilerplate
- * @since 1.00
+ * @package WordPressThemeBoilerplate
+ * @author Christopher Lamm <chris@theantichris.com>
+ * @since 1.0.0
  */
-
 ?>
 
 <?php get_header(); ?>

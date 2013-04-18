@@ -12,6 +12,26 @@
 /* TODO: Change wptbp_ prefixes */
 
 /**
+ * Setup defaults and support for WordPress features.
+ *
+ * Makes the theme available for translation, adds support for custom a custom header and background, registers the
+ * primary navigation menu with WordPress, and sets the default time zone. Called at the after_setup_theme hook.
+ */
+function wptbp_setup() {
+	load_theme_textdomain( 'wptbp', get_template_directory() . '/lang' ); // Make theme available for translation
+
+	add_theme_support( 'custom-header' ); // Add support for custom header
+
+	add_theme_support( 'custom-background' ); // Add support for custom backgrounds
+
+	register_nav_menu( 'primary', __( 'Primary Navigation', 'wptbp' ) ); // Register primary navigation menu
+
+	// Set timezone
+	$timezone_string = get_option( 'timezone_string' );
+	date_default_timezone_set( $timezone_string );
+}
+
+/**
  * Returns the page title based on page properties.
  *
  * @return string
@@ -50,8 +70,6 @@ function wptbp_get_title() {
 
 	return $title;
 }
-
-register_nav_menu( 'primary', 'Primary Navigation' ); // Register primary navigation menu location
 
 
 // Register sidebar
