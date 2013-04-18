@@ -27,6 +27,7 @@ function wptbp_setup() {
 	register_nav_menu( 'primary', __( 'Primary Navigation', 'wptbp' ) ); // Register primary navigation menu
 
 	// Set timezone
+	/** @var string $timezone_string The WordPress timezone setting */
 	$timezone_string = get_option( 'timezone_string' );
 	date_default_timezone_set( $timezone_string );
 }

@@ -9,7 +9,7 @@
  */
 
 // Include themes function file
-include_once( '../functions.php' );
+include_once( 'functions.php' );
 
 /**
  * Class that contains the unit tests for the theme.
@@ -36,6 +36,9 @@ class Test_WordPress_Theme_Boilerplate extends WP_UnitTestCase {
 
 		// Switch active theme to this theme
 		switch_theme( 'WordPress Theme Boilerplate', 'WordPress Theme Boilerplate' ); // TODO: Change to theme name
+
+		// Set WordPress timezone
+		update_option( 'timezone_string', 'America/New_York' );
 	}
 
 	/**
@@ -75,6 +78,34 @@ class Test_WordPress_Theme_Boilerplate extends WP_UnitTestCase {
 		wp_enqueue_script( 'jquery' ); // Run this action to load jQuery using the same code used to load it in the theme
 
 		$this->assertTrue( wp_script_is( 'jquery' ), 'Test that jQuery is loaded.' ); // Test that jQuery is now loaded
+	}
+
+	/**
+	 * Test wptbp_setup() in functions.php.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return void
+	 */
+	function test_wptbp_setup() {
+		do_action( 'after_setup_theme' ); // Run the after_setup_hook
+
+		// Test theme feature support
+		$this->assertTrue( current_theme_supports( 'custom-header' ), 'Custom header support is registered at the after_setup_theme hook.' );
+		$this->assertTrue( current_theme_supports( 'custom-background' ), 'Custom background support is registered at the after_setup_theme hook.' );
+		$this->assertTrue( current_theme_supports( 'menus' ), 'Custom menu support is registered at the after_setup_theme hook by registering the primary navigation menu location.' );
+
+		// Test primary navigation
+		/** @var array $locations An array containing all the navigation menu locations registered with WordPress */
+		$locations = get_registered_nav_menus();
+		$this->assertTrue( array_key_exists( 'primary', $locations ), 'The Primary Navigation menu is registered at the after_setup_theme hook.' );
+
+		// Test timezone
+		/** @var string $wordpress_timezone The WordPress timezone setting */
+		$wordpress_timezone = get_option( 'timezone_string' );
+		/** @var string $default_timezone The current timezone set as the default for PHP */
+		$default_timezone = date_default_timezone_get();
+		$this->assertEquals( $wordpress_timezone, $default_timezone, 'The default timezone should match the timezone set in WordPress.' );
 	}
 
 	/**
