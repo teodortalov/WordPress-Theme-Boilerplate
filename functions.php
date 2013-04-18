@@ -32,6 +32,41 @@ function wptbp_setup() {
 	date_default_timezone_set( $timezone_string );
 }
 
+add_action( 'after_setup_theme', 'wptbp_setup' );
+
+/**
+ * Registers sidebars with WordPress.
+ *
+ * @since 1.0.0
+ *
+ * @return void
+ */
+function wptbp_register_sidebars() {
+	// Register sidebar
+	if ( function_exists( 'register_sidebar' ) ) {
+		register_sidebar( array(
+			'name' => __( 'Sidebar Widgets', 'fp' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget' => '</div>',
+			'before_title' => '<h4 class="widget-title">',
+			'after_title' => '</h4>'
+		) );
+	}
+
+// Register secondary sidebar
+	if ( function_exists( 'register_sidebar' ) ) {
+		register_sidebar( array(
+			'name' => __( 'Secondary Sidebar Widgets', 'fp' ),
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget' => '</div>',
+			'before_title' => '<h4 class="widget-title">',
+			'after_title' => '</h4>'
+		) );
+	}
+}
+
+add_action( 'widgets_init', 'wptbp_register_sidebars' );
+
 /**
  * Returns the page title based on page properties.
  *
@@ -71,36 +106,3 @@ function wptbp_get_title() {
 
 	return $title;
 }
-
-/**
- * Registers sidebars with WordPress.
- *
- * @since 1.0.0
- *
- * @return void
- */
-function wptbp_register_sidebars() {
-	// Register sidebar
-	if ( function_exists( 'register_sidebar' ) ) {
-		register_sidebar( array(
-			'name' => 'Sidebar Widgets',
-			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget' => '</div>',
-			'before_title' => '<h4 class="widget-title">',
-			'after_title' => '</h4>'
-		) );
-	}
-
-// Register secondary sidebar
-	if ( function_exists( 'register_sidebar' ) ) {
-		register_sidebar( array(
-			'name' => 'Secondary Sidebar Widgets',
-			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget' => '</div>',
-			'before_title' => '<h4 class="widget-title">',
-			'after_title' => '</h4>'
-		) );
-	}
-}
-
-add_action( 'widgets_init', 'wptbp_register_sidebars' );
