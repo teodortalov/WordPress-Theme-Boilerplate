@@ -21,6 +21,7 @@ include_once( 'functions.php' );
 class Test_WordPress_Theme_Boilerplate extends WP_UnitTestCase {
 	// TODO: Change WordPress_Theme_Boilerplate to theme name
 	// TODO: Change file name to match
+	// TODO: Place theme files in unit-test WordPress installation
 
 	/**
 	 * Setup the theme for testing.
@@ -106,6 +107,23 @@ class Test_WordPress_Theme_Boilerplate extends WP_UnitTestCase {
 		/** @var string $default_timezone The current timezone set as the default for PHP */
 		$default_timezone = date_default_timezone_get();
 		$this->assertEquals( $wordpress_timezone, $default_timezone, 'The default timezone should match the timezone set in WordPress.' );
+	}
+
+	/**
+	 * Tests the registration of sidebars in the wptbp_register_sidebars() function in functions.php.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return void
+	 */
+	function test_wptbp_register_sidebars() {
+		do_action( 'widgets_init' ); // Run the widgets_init hook
+
+		/** @var array $sidebars Array containing all active sidebars and their widgets. */
+		$sidebars = wp_get_sidebars_widgets();
+
+		$this->assertTrue( array_key_exists( 'sidebar-1', $sidebars ), 'Sidebar 1 is registered at the widgets_init hook.' );
+		$this->assertTrue( array_key_exists( 'sidebar-2', $sidebars ), 'Sidebar 2 is registered at the widgets_init_hook.' );
 	}
 
 	/**
