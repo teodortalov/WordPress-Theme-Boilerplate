@@ -20,3 +20,4 @@ WordPress Theme Boilerplate Changelog
 * Updated single.php
 * Updated page.php
 * Updated 404.php
+* Updated search.php
