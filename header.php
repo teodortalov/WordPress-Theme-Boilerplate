@@ -2,6 +2,7 @@
 
 /**
  * Included at the top of every page. Includes the doctype, <head> tag, opening <body> tag, <header> tag, and <nav> tag.
+ * wp_head() is called from the <head> tag.
  *
  * @package    WordPress
  * @subpackage WordPressThemeBoilerplate
