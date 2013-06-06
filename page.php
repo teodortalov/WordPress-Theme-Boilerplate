@@ -1,47 +1,45 @@
 <?php
 
 /**
- * Template for Pages.
+ * Displays a single page.
  *
- * @package WordPressThemeBoilerplate
- * @author Christopher Lamm <chris@theantichris.com>
- * @since 1.0.0
+ * @package    WordPress
+ * @subpackage WordPressThemeBoilerplate
+ * @author     Christopher Lamm <chris@theantichris.com>
+ * @since      1.0.0
  */
+
+
+get_header();
 
 ?>
 
-<?php get_header(); ?>
+	<div id="content" role="main">
 
-<?php get_sidebar(); ?>
+		<?php if ( have_posts() ): while ( have_posts() ): the_post(); ?>
 
-<div id="main-content">
+			<article id="post-<?php the_ID(); ?>" <?php post_class() ?>>
+				<h1><?php the_title(); ?></h1>
 
-	<?php if ( have_posts() ) : ?>
+				<div>
+					<?php the_content(); ?>
 
-		<?php while ( have_posts() ) : the_post(); ?>
+					<?php wp_link_pages( array( 'before' => __( 'Pages: ' ), 'next_or_number' => 'number' ) ); ?>
+				</div>
 
-			<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-				<h2><a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+				<?php edit_post_link( __( 'Edit this entry', 'wptbp' ), '', '.' ); ?>
+			</article>
 
-				<?php echo get_post_meta( $post->ID, 'PostThumb', true ); ?>
+			<?php comments_template(); ?>
 
-				<p class="meta">
-					<span>Posted on</span> <?php the_time( 'F jS, Y' ); ?> <span>by</span> <?php the_author(); ?>
-				</p>
+		<?php endwhile; endif; ?>
 
-				<?php the_content(); ?>
-			</div>
+	</div>
 
-		<?php endwhile; ?>
+<?php
 
-	<?php else: ?>
+get_sidebar();
 
-		<h2>Nothing Found</h2>
+get_footer();
 
-	<?php endif; ?>
-
-</div>
-
-<?php get_sidebar( 'secondary' ); ?>
-
-<?php get_footer(); ?>
+?>

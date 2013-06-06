@@ -18,3 +18,4 @@ WordPress Theme Boilerplate Changelog
 * Updated functions.php
 * Removed secondary sidebar
 * Updated single.php
+* Updated page.php
