@@ -14,3 +14,4 @@ WordPress Theme Boilerplate Changelog
 * Update header.php
 * Added iOS icons
 * Updated footer.php
+* Updated index.php
