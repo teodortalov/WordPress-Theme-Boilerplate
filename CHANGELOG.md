@@ -21,4 +21,5 @@ WordPress Theme Boilerplate Changelog
 * Updated page.php
 * Updated 404.php
 * Updated search.php
-* Updates searchform.php
+* Updated searchform.php
+* Updated archive.php
