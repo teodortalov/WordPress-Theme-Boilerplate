@@ -3,17 +3,18 @@
 /**
  * Search form that can be used on any page.
  *
- * Call the search form with the get_search_form() function.
+ * Call the search form with the get_search_form() function. The results are displayed in search.php.
  *
- * @package WordPressThemeBoilerplate
- * @author Christopher Lamm <chris@theantichris.com>
- * @since 1.0.0
+ * @package    WordPress
+ * @subpackage WordPressThemeBoilerplate
+ * @author     Christopher Lamm <chris@theantichris.com>
+ * @since      1.0.0
  */
 
 ?>
 
-<form method="get" id="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>">
-	<label for="s">Search</label>
-	<input type="text" name="s" id="s" placeholder="Search" />
-	<input type="submit" name="submit" id="searchsubmit" value="Search" />
+<form id="searchform" method="get" action="<?php echo esc_url( home_url( '/' ) ); ?>">
+	<label for="s"><?php _e( 'Search:', 'wptbp' ); ?></label>
+	<input id="s" name="s" type="search" value="<?php _e( 'Search:', 'wptbp' ); ?>" />
+	<input id="search-submit" type="submit" name="submit" value="<?php _e( 'Search:', 'wptbp' ); ?>" />
 </form>
