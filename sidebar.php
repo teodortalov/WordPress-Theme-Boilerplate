@@ -13,5 +13,11 @@
 ?>
 
 <div id="sidebar">
-	<?php dynamic_sidebar( 'sidebar' ); ?>
+	<?php
+
+	if ( ( function_exists( 'dynamic_sidebar' ) ) && ( dynamic_sidebar( 'sidebar' ) ) ) {
+		dynamic_sidebar( 'sidebar' );
+	}
+
+	?>
 </div>

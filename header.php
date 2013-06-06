@@ -25,7 +25,15 @@
 
 	<meta name="Copyright" content="Copyright &copy; <?php bloginfo( 'name' ); ?> <?php echo date( 'Y' ); ?>. All Rights Reserved.">
 
-	<title><?php echo wptbp_get_title(); // TODO: Change function prefix. ?></title>
+	<title>
+		<?php
+
+		if ( ( function_exists( 'wptbp_get_title' ) ) && ( wptbp_get_title() ) ) {
+			echo wptbp_get_title();
+		}
+
+		?>
+	</title>
 
 	<?php wp_head(); ?>
 
