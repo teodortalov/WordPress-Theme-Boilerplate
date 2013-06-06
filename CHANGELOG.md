@@ -15,3 +15,5 @@ WordPress Theme Boilerplate Changelog
 * Added iOS icons
 * Updated footer.php
 * Updated index.php
+* Updated functions.php
+* Removed secondary sidebar
