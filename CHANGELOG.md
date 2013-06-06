@@ -19,4 +19,4 @@ WordPress Theme Boilerplate Changelog
 * Removed secondary sidebar
 * Updated single.php
 * Updated page.php
-* UPdated 404.php
+* Updated 404.php
