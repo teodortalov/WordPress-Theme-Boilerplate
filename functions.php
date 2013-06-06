@@ -11,7 +11,7 @@
  */
 
 // TODO: Change wptbp_ function prefixes to something unique to your theme here in the declaration and in their calls.
-// TODO: Change wptbp text domain to something unique to your theme.
+// TODO: Change wptbp text domain to something unique to your theme in load_theme_textdomain() and where used..
 
 /**
  * Setup defaults and support for WordPress features.
