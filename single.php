@@ -3,51 +3,51 @@
 /**
  * Displays a single Post in full (the Posts permalink), typically with comments.
  *
- * @package WordPressThemeBoilerplate
- * @author Christopher Lamm <chris@theantichris.com>
- * @since 1.0.0
+ * @package    WordPress
+ * @subpackage WordPressThemeBoilerplate
+ * @author     Christopher Lamm <chris@theantichris.com>
+ * @since      1.0.0
  */
+
+
+get_header();
 
 ?>
 
-<?php get_header(); ?>
+	<div id="content" role="main">
 
-<?php get_sidebar(); ?>
+		<?php if ( have_posts() ): while ( have_posts() ): the_post(); ?>
 
-<div id="main-content">
+			<article id="post-<?php the_ID(); ?>" <?php post_class() ?>>
+				<h1><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h1>
 
-	<?php if ( have_posts() ) : ?>
+				<div>
+					<?php the_content(); ?>
 
-		<?php while ( have_posts() ) : the_post(); ?>
+					<?php wp_link_pages( array( 'before' => __( 'Pages: ' ), 'next_or_number' => 'number' ) ); ?>
 
-			<div <?php post_class(); ?> id="post-<?php the_ID(); ?>">
-				<h2><a href="<?php the_permalink(); ?>" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+					<?php the_tags( __( 'Tags: ' ), ', ', '' ); ?>
+				</div>
 
-				<?php echo get_post_meta( $post->ID, 'PostThumb', true ); ?>
+				<?php edit_post_link( __( 'Edit this entry', 'wptbp' ), '', '.' ); ?>
+			</article>
 
-				<p class="meta">
-					<span>Posted on</span> <?php the_time( 'F jS, Y' ); ?> <span>by</span> <?php the_author(); ?>
-				</p>
-
-				<?php the_content( 'Read Full Article' ); ?>
-
-				<p>
-					<?php the_tags( 'Tags: ', ', ', '<br />' ); ?>
-					Posted in <?php the_category( ', ' ); ?>
-					<?php comments_popup_link( 'No Comments', '1 Comment', '% Comments' ); ?>
-				</p>
-			</div>
+			<?php comments_template(); ?>
 
 		<?php endwhile; ?>
 
-	<?php else: ?>
+		<?php else: ?>
 
-		<h2>Nothing Found</h2>
+			<h2><?php _e( 'No posts were found.', 'wptbp' ); ?></h2>
 
-	<?php endif; ?>
+		<?php endif; ?>
 
-</div>
+	</div>
 
-<?php get_sidebar( 'secondary' ); ?>
+<?php
 
-<?php get_footer(); ?>
+get_sidebar();
+
+get_footer();
+
+?>
